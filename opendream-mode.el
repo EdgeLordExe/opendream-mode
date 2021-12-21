@@ -87,7 +87,6 @@
       "database"
       ;;pretend the following are actually types
       "num"
-      "null"
       "anything"
       "text"
       "message" ;;from byond docs about input() no fucking clue if anyone has ever used this..
@@ -182,7 +181,8 @@
 
 (defconst opendream-highlights
   `(
-    (,(regexp-opt opendream-preprocessors	'symbols) . 	font-lock-preprocessor-face)
+    ;; TODO: figure out why preprocessors dont work!
+    ;;(,(regexp-opt opendream-preprocessors	'symbols) . 	font-lock-preprocessor-face)
     (,(regexp-opt opendream-constants 		'symbols) . 	font-lock-constant-face)
     (,(regexp-opt opendream-keywords 		'symbols) . 	font-lock-keyword-face)
     (,(regexp-opt opendream-classes 		'symbols) . 	font-lock-type-face)
