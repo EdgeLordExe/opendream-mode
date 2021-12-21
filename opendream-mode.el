@@ -181,10 +181,11 @@
 
 
 (defconst opendream-highlights
-  `((,(regexp-opt opendream-keywords 		'symbols) . 	font-lock-keyword-face)
-    (,(regexp-opt opendream-classes 		'symbols) . 	font-lock-type-face)
+  `(
     (,(regexp-opt opendream-preprocessors	'symbols) . 	font-lock-preprocessor-face)
     (,(regexp-opt opendream-constants 		'symbols) . 	font-lock-constant-face)
+    (,(regexp-opt opendream-keywords 		'symbols) . 	font-lock-keyword-face)
+    (,(regexp-opt opendream-classes 		'symbols) . 	font-lock-type-face)
     (,(regexp-opt opendream-inbuilt-procs 	'symbols) . 	font-lock-builtin-face))
   )
 
