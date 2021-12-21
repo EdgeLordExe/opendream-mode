@@ -10,3 +10,4 @@
 	world.log << "kind of works!"
 	var/x = new /mob/test()
 	del(x)
+// ok comments also work!

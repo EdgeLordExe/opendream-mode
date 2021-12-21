@@ -46,21 +46,146 @@
 
 (eval-and-compile
   (defconst opendream-keywords
-    '("if" "else" "while" "for" "proc" "return" "continue" "break" "const" "global" "temp" "new" "verb" "var" )))
+    '("list"
+      "if"
+      "else"
+      "while"
+      "for"
+      "proc"
+      "return"
+      "continue"
+      "break"
+      "const"
+      "global"
+      "temp"
+      "verb"
+      "var"
+      "usr" ;;pretend it's a keyword
+      "switch"
+      "case"
+      "as"
+      )))
 
 (eval-and-compile
   (defconst opendream-classes
-    '("client" "atom" "atom/movable" "world" "datum" "mob" "turf" "obj" "image" "icon" )))
+    '("area"
+      "client"
+      "atom"
+      "movable"
+      "world"
+      "datum"
+      "mob"
+      "turf"
+      "obj"
+      "image"
+      "icon"
+      "sound"
+      "mutable_appearance"
+      "matrix"
+      "regex"
+      "savefile"
+      "database"
+      ;;pretend the following are actually types
+      "num"
+      "null"
+      "anything"
+      "text"
+      "message" ;;from byond docs about input() no fucking clue if anyone has ever used this..
+      )))
 
 (eval-and-compile
+  (defconst opendream-constants
+    '("null"
+      ;;appearance flags
+      "LONG_GLIDE"
+      "RESET_COLOR"
+      "RESET_ALPHA"
+      "NO_CLIENT_COLOR"
+      "KEEP_TOGETHER"
+      "KEEP_APART"
+      "PLANE_MASTER"
+      "TILE_BOUND"
+      "PIXEL_SCALE"
+      "PASS_MOUSE"
+      "TILE_MOVER"
+      ;;blend modes
+      "BLEND_DEFAULT"
+      "BLEND_OVERLAY"
+      "BLEND_ADD"
+      "BLEND_SUBTRACT"
+      "BLEND_MULTIPLY"
+      "BLEND_INSET_OVERLAY"
+      ;;directions
+      "NORTH"
+      "SOUTH"
+      "EAST"
+      "WEST"
+      "NORTHEAST"
+      "NORTHWEST"
+      "SOUTHEAST"
+      "SOUTHWEST"
+      ;;layers
+      "AREA_LAYER"
+      "TURF_LAYER"
+      "OBJ_LAYER"
+      "MOB_LAYER"
+      "FLOAT_LAYER"
+      "TOPDOWN_LAYER"
+      "EFFECTS_LAYER"
+      "BACKGROUND_LAYER"
+      ;;planes
+      "FLOAT_PLANE"
+      ;;vis flags
+      "VIS_INHERIT_ICON"
+      "VIS_INHERIT_ICON_STATE"
+      "VIS_INHERIT_DIR"
+      "VIS_INHERIT_LAYER"
+      "VIS_INHERIT_PLANE"
+      "VIS_INHERIT_ID"
+      "VIS_UNDERLAY"
+      "VIS_HIDE"
+      )))
+
+(eval-and-compile
+  (defconst opendream-preprocessors
+    '("#define"
+      "#if"
+      "#elif"
+      "#ifdef"
+      "#ifndef"
+      "#else"
+      "#endif"
+      "#include"
+      "#error"
+      "#warn"
+      )))
+
+;;some common procs
+(eval-and-compile
   (defconst opendream-inbuilt-procs
-    '("sleep" "spawn" "del" ".." )))
+    '("sleep"
+      "spawn"
+      ".."
+      "alert"
+      "input"
+      "prob"
+      "pick"
+      "rand"
+      "range"
+      "new"
+      "del"
+      "throw"
+      "catch"
+      "try" )))
+
 
 
 (defconst opendream-highlights
-  `((,(regexp-opt opendream-keywords 'symbols) . 	font-lock-keyword-face)
-    (,(regexp-opt opendream-classes 'symbols) . 	font-lock-type-face)
-  (,(regexp-opt opendream-inbuilt-procs 'symbols) . 	font-lock-builtin-face))
+  `((,(regexp-opt opendream-keywords 		'symbols) . 	font-lock-keyword-face)
+    (,(regexp-opt opendream-classes 		'symbols) . 	font-lock-type-face)
+    (,(regexp-opt opendream-preprocessors	'symbols) . 	font-lock-preprocessor-face)
+    (,(regexp-opt opendream-constants 		'symbols) . 	font-lock-constant-face)
+    (,(regexp-opt opendream-inbuilt-procs 	'symbols) . 	font-lock-builtin-face))
   )
 
 
