@@ -48,13 +48,6 @@
   (defconst opendream-keywords
     '("if" "else" "while" "for" "proc" "return" "continue" "break" "const" "global" "temp" "new" "verb" "var" )))
 
-(defconst opendream-highlights
-  `((,(regexp-opt opendream-keywords 'symbols) . 	font-lock-keyword-face))
-  ;;`((,(regexp-opt opendream-classes 'symbols) . 	font-lock-type-face))
-  ;;`((,(regexp-opt opendream-inbuilt-procs 'symbols) . 	font-lock-builtin-face))
-  )
-
-
 (eval-and-compile
   (defconst opendream-classes
     '("client" "atom" "atom/movable" "world" "datum" "mob" "turf" "obj" "image" "icon" )))
@@ -62,6 +55,14 @@
 (eval-and-compile
   (defconst opendream-inbuilt-procs
     '("sleep" "spawn" "del" ".." )))
+
+
+(defconst opendream-highlights
+  `((,(regexp-opt opendream-keywords 'symbols) . 	font-lock-keyword-face)
+    (,(regexp-opt opendream-classes 'symbols) . 	font-lock-type-face)
+  (,(regexp-opt opendream-inbuilt-procs 'symbols) . 	font-lock-builtin-face))
+  )
+
 
 ;;;###autoload
 (define-derived-mode opendream-mode prog-mode "opendream"
