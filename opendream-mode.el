@@ -2,6 +2,7 @@
 ;;; Copyright © 2021
 ;;             Free Software Foundation, Inc
 
+;; Author of porth-mode.el (Project that opendream-mode.el was based off of):  Alexey Kutepov <reximkut@gmail.com>
 ;; Author: Edge
 ;; Keywords: opendream
 
